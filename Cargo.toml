@@ -1,0 +1,11 @@
+[package]
+name = "wgpu-error-repro"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+anyhow = "1.0.68"
+bytemuck = "1.13.1"
+futures-intrusive = "0.5.0"
+pollster = "0.3"
+wgpu = "0.17"
