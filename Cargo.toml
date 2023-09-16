@@ -3,9 +3,25 @@ name = "wgpu-error-repro"
 version = "0.1.0"
 edition = "2021"
 
+[lib]
+name = "wgpu_error_repro"
+crate-type = ["cdylib", "lib"]
+
+[[bin]]
+name = "wgpu_error_repro"
+path = "src/main.rs"
+
 [dependencies]
 anyhow = "1.0.68"
 bytemuck = "1.13.1"
 futures-intrusive = "0.5.0"
 pollster = "0.3"
 wgpu = "0.17"
+
+[target.'cfg(target_arch = "wasm32")'.dependencies]
+console_error_panic_hook = "0.1.7"
+futures = "0.3.28"
+js-sys = "0.3.64"
+wasm-bindgen = "0.2.87"
+wasm-bindgen-futures = "0.4.37"
+web-sys = "0.3.64"
